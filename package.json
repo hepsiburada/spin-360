@@ -1,6 +1,6 @@
 {
   "name": "spin-360",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "360 degree detailed image presentation plugin",
   "main": "index.js",
   "scripts": {
