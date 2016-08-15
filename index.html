@@ -3,16 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Spin 360</title>
-	<link rel="stylesheet" type="text/css" href="styles/main.css" />
 </head>
 <body>
 	<div id="360Image"></div>
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/main.js"></script>
+	<script type="text/javascript" src="scripts/spin360.js"></script>
 
 	<script type="text/javascript">
-		$.spin360({
+		window.sp = $.spin360({
 			id: "360Image",
 			width: 500,
 			height: 500,

@@ -8,10 +8,10 @@
 	}
 }(function ($) {
 
-	$.spin360 = function (options) {
+	function spin (options) {
 		var self = this;
 
-		self.opt = {
+		var defaultOp = {
 			id: '360Image',
 			imgClass: 'spin-image',
 			datas: [
@@ -57,87 +57,109 @@
 			lazyLoad: true
 		};
 
-		self.options = Object.assign(self.opt, options);
+		self.options = Object.assign(defaultOp, options);
 		self.activeIndex = 0;
+		self.$element = $('#' + self.options.id);
+		self.create();
+	};
 
-		self.createTemplate = function () {
-			var opt = self.options;
-			var $element = $('#' + opt.id);
+	$.spin = spin;
 
-			$element.addClass('spin loader');
-			$element.css({
+	spin.prototype = {
+		create: function () {
+			var self = this;
+			var opt = this.options;
+
+			self.$element.addClass('spin loader');
+			self.$element.css({
 				'width': opt.width + 'px',
 				'height': opt.height + 'px',
 				'cursor': '-webkit-grab'
 			});
 
-			self.run($element, opt);
-		};
-
-		self.run = function ($element, opt) {
+			self.run(opt);
+		},
+		run: function (opt) {
+			var self = this;
 			var datas = opt.datas;
-			self.appendImages($element, datas);
-			self.createEvents($element, datas);
-		};
 
-		self.appendImages = function ($element, datas) {
-			var template = '';
-			var dataClass = '';
-			var addingClass = '';
-			var src = self.options.lazyLoad ? 'data-src' : 'src';
+			this.appendImages(datas);
+			this.createEvents(datas);
+		},
+		appendImages: function (datas) {
+			var self = this,
+					template = '',
+					dataClass = '',
+					addingClass = '';
+
+			var src = this.options.lazyLoad ? 'data-src' : 'src';
 
 			for (var i = 0; i < datas.length; i++) {
-				dataClass = i === self.activeIndex ? '' : 'hidden';
-				addingClass = i === self.activeIndex ? '' : 'display:none;';
+				dataClass = i === this.activeIndex ? '' : 'hidden';
+				addingClass = i === this.activeIndex ? '' : 'display:none;';
 
-				template += '<img style="width: 100%; height: auto; '+ addingClass +'" class="'+ self.options.imgClass +' '+ dataClass +'" '+ src +'="'+ datas[i] +'" />';
+				template += '<img style="width: 100%; height: auto; '+ addingClass +'" class="'+ this.options.imgClass +' '+ dataClass +'" '+ src +'="'+ datas[i] +'" />';
 			}
 
-			$element.html(template);
-			self.setImages($element, self.activeIndex);
-		};
+			self.$element.html(template);
+			this.setImages(this.activeIndex);
+		},
+		setImages: function (index) {
+			var self = this;
 
-		self.setImages = function ($element, index) {
-			$allImages = $element.find('.' + self.options.imgClass);
+			$allImages = self.$element.find('.' + this.options.imgClass);
 			$allImages.not('.hidden').addClass('hidden').css('display', 'none');
 			$imgElement = $allImages.eq(index);
-			if (self.options.lazyLoad) {
+			if (this.options.lazyLoad) {
 				$imgElement.attr('src', $imgElement.data('src')).removeClass('hidden').css('display', 'block');
 			} else {
 				$imgElement.removeClass('hidden').css('display', 'block');
 			}
-		};
+		},
+		createEvents: function (datas) {
+			var self = this;
 
-		self.createEvents = function ($element, datas) {
-	    $element.mousedown(function(e){
+	    self.$element.mousedown(function(e){
 	    	e.preventDefault();
 	    	var p0 = { x: e.pageX, y: e.pageY };
 		    $(this).on("mousemove",function (e) {
-		    		$element.css('cursor', '-webkit-grabbing');
+		    		self.$element.css('cursor', '-webkit-grabbing');
 		        var p1 = { x: e.pageX, y: e.pageY };
 
 		        if (p0.x - p1.x > 10) {
 		        	self.activeIndex++;
 		        	self.activeIndex = self.activeIndex >= datas.length ? 0 : self.activeIndex;
-		        	self.setImages($element, self.activeIndex);
+		        	self.setImages(self.activeIndex);
 		        	p0 = p1;
 		        } else if (p0.x - p1.x <= -10) {
 		        	self.activeIndex--;
 		        	self.activeIndex = self.activeIndex < 0 ? datas.length - 1 : self.activeIndex;
-		        	self.setImages($element, self.activeIndex);
+		        	self.setImages(self.activeIndex);
 		        	p0 = p1;
 		        }
 		    });
 			}).mouseup(function (){
 			   $(this).off("mousemove");
-			   $element.css('cursor', '-webkit-grab');
+			   self.$element.css('cursor', '-webkit-grab');
 			}).mouseleave(function (){
 			   $(this).off("mousemove");
-			   $element.css('cursor', '-webkit-grab');
+			   self.$element.css('cursor', '-webkit-grab');
 			});
-		};
-
-		self.createTemplate();
+		},
+		destroy: function () {
+				var self = this;
+				
+				self.$element.html('');
+				self.$element.removeAttr('class');
+				self.$element.replaceWith(self.$element.clone());
+		}
 	};
 
+	$.spin360 = function (options) {
+		var self = this;
+		var spins = new spin(options, self);
+
+		return spins;
+	}
+	
 }));
