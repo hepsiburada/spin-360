@@ -14,8 +14,9 @@ $(element).spin360(options);
 
 * `width`: (`Integer`) Görsel alanının genişliği - Default (`500`)
 * `height`: (`Integer`) - Görsel alanının yüksekliği - Default (`500`)
-* `images`: (`Array`) - 360 derece gösterilmesi istenen nesnenin sıralı listesi.
+* `datas`: (`Array`) - 360 derece gösterilmesi istenen nesnenin sıralı listesi.
 * `imgClass`: (`String`) - Görsellerin alacağı class değeri - Default (`spin-image`)
+* `type`: (`String`) - 'images' ya da 'video' - Default (`images`)
 * `lazyLoad`: (`boolean`) - Aktif olmayan görsellerin sayfaya yüklenmesini bekletir. Aktif olduktan sonra yükleyip, yüklenme zamanını dengeler - Default(`true`)
 
 ## Kullanımı - Usage
@@ -39,7 +40,7 @@ var spin = $('#360Image').spin360({
     width: 500,
     height: 500,
     imgClass: 'spin-image',
-    images: [
+    datas: [
         "images/Tv/product01.jpg",
         "images/Tv/product02.jpg",
         "images/Tv/product03.jpg",

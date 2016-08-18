@@ -1,0 +1,28 @@
+{
+  "name": "spin-360",
+  "version": "0.0.3",
+  "description": "360 degree detailed image presentation plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkantagal/spin-360.git"
+  },
+  "keywords": [
+    "360",
+    "degree",
+    "product",
+    "image",
+    "view",
+    "volkan",
+    "tagal"
+  ],
+  "author": "Volkan Tağal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/volkantagal/spin-360/issues"
+  },
+  "homepage": "https://github.com/volkantagal/spin-360#readme"
+}

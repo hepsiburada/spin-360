@@ -41,6 +41,7 @@
                 <li><b>height:</b> (Integer) - Görsel alanının yüksekliği - Default (500)</li>
                 <li><b>images:</b> (Array) - 360 derece gösterilmesi istenen nesnenin sıralı listesi.</li>
                 <li><b>imgClass:</b> (String) - Görsellerin alacağı class değeri - Default (spin-image)</li>
+                <li><b>type:</b> (String) - 'images' ya da 'video' - Default (images)</li>
                 <li><b>lazyLoad:</b> (Boolean) - Aktif olmayan görsellerin sayfaya yüklenmesini bekletir. Aktif
                     olduktan sonra yükleyip, yüklenme zamanını dengeler - Default(true)
                 </li>
@@ -49,8 +50,15 @@
             <br>
         </div>
         <div class="description">
+          <h2>Image ile spin 360</h2>
         </div>
         <div id="360Image"></div>
+        <br>
+        <br>
+        <div class="description">
+          <h2>Video ile spin 360</h2>
+        </div>
+        <div id="360Video"></div>
         <br>
         <br>
         <div class="description">
@@ -63,7 +71,6 @@
                 src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">&lt;/script>
                 <br>
                 &lt;script type="text/javascript" src="scripts/spin360.js">&lt;/script>
-
                 <br>
                 <br>
                 <span class="note">/* Daha sonra 360 derece görselimizin görüneceği alan oluşturulur. */</span>
@@ -72,6 +79,9 @@
             <br>
             <div class="code">
                 &lt;div id="360Image">&lt;/div>
+                <br>
+                <br>
+                &lt;div id="360Video">&lt;/div>
             </div>
         </div>
 
@@ -85,7 +95,7 @@
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspwidth: 500,<br>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspheight: 500,<br>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspimgClass: 'spin-image',<br>
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspimages: [<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdatas: [<br>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"images/Tv/product01.jpg",<br>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"images/Tv/product02.jpg",<br>
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"images/Tv/product03.jpg",<br>
@@ -126,6 +136,19 @@
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsplazyLoad: true<br>
                 });<br>
             </div>
+            <br>
+            <h3>Video ile çalıştırma</h3>
+            <br>
+            <div class="code">
+                var spin = $('#360Video').spin360({<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspwidth: 500,<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspheight: 300,<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsptype: 'video',<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspdatas: [<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"videos/Tv/20Ms.mp4",<br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp]<br>
+                });<br>
+            </div>
         </div>
 
         <div class="description">
@@ -150,7 +173,7 @@
   var spin = $('#360Image').spin360({
     width: 500,
     height: 300,
-    images: [
+    datas: [
       "images/Tv/product01.jpg",
       "images/Tv/product02.jpg",
       "images/Tv/product03.jpg",
@@ -187,6 +210,17 @@
       "images/Tv/product34.jpg",
       "images/Tv/product35.jpg",
       "images/Tv/product36.jpg"
+    ],
+    lazyLoad: false
+  });
+
+  var spVideo = $('#360Video').spin360({
+    id: "360Video",
+    width: 500,
+    height: 300,
+    type: 'video',
+    datas: [
+      "videos/Tv/20Ms.mp4"
     ],
     lazyLoad: false
   });
