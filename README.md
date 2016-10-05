@@ -1,5 +1,11 @@
 # spin-360
 
+spin-360 is a npm project.
+
+If you want use it:
+
+`npm install spin-360`
+
 spin-360 360 derece detaylı resim gösterimi için geliştirilmiş ve geliştirilmektedir. spin-360 is 360 degree detailed image presentation plugin
 
 360 derece ürün gösterimi ve özellikle e-ticaret siteleri için uygundur. This plugin is avalible for e-Commerce sites.
