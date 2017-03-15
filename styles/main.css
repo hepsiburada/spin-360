@@ -1,0 +1,86 @@
+body, html {
+    padding: 0px;
+    margin: 0px;
+    background-color: #fff;
+}
+
+header {
+    padding: 16px 0;
+    background-color: #fff;
+    color: #FFF;
+    text-align: left;
+    box-shadow: 4px 3px 10px #ddd;
+}
+
+header .logo {
+    text-align: left;
+    font-size: 32px;
+    font-family: Arial;
+    position: relative;
+}
+
+header .logo span {
+    margin-left: 65px;
+    color: #484848;
+    margin-top: -16px;
+    font-weight: bold;
+}
+
+.logo .vt-logo {
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-image: url(../images/spin360-2.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: -7px;
+}
+
+.global-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.page-container {
+    display: inline-block;
+    padding: 32px 0;
+}
+
+.page-container .title {
+    font-size: 24px;
+    text-align: left;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.page-container .title.small {
+    padding-top: 24px;
+    font-size: 16px;
+}
+
+.page-container .description {
+    font-size: 13px;
+    text-align: left;
+    font-family: Arial;
+}
+
+.code {
+    padding: 16px;
+    background-color: #efefef;
+}
+
+.code .note {
+    color: #ccc;
+}
+
+.terminal {
+    padding: 16px;
+    background-color: #000;
+    color: #eee;
+}
+
+.terminal-arrow {
+    color: green;
+}
