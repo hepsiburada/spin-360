@@ -90,6 +90,3 @@ window.sp = $.spin360({
 Projeyi çalıştırdıktan sonra durdurmak istiyorsanız:
 
 window.sp.destroy();
-## Authors
-
-Hepsiburada
