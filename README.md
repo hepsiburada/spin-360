@@ -14,7 +14,7 @@ spin-360 360 derece detaylı resim gösterimi için geliştirilmiş ve geliştir
 
 $.spin360(options);
 
-##Parametreler - Options
+## Parametreler - Options
 
 * `id`: Type (`String`) - 360 derece görselin gösterileceği alanın 'id' si. Default (`360Image`)
 * `width`: Type (`Integer`) Görsel alanının genişliği Default (`500`)
