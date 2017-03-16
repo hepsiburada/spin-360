@@ -92,4 +92,4 @@ Projeyi çalıştırdıktan sonra durdurmak istiyorsanız:
 window.sp.destroy();
 ##Authors
 
-Volkan Tağal
+Hepsiburada
