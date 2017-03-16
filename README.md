@@ -23,7 +23,7 @@ $.spin360(options);
 * `imgClass`: Type (`String`) - Görsellerin alacağı class değeri. Default (`spin-image`)
 * `lazyLoad`: Type (`boolean`) - Aktif olmayan görsellerin sayfaya yüklenmesini bekletir. Aktif olduktan sonra yükleyip, yüklenme zamanını dengeler. - Default(`true`)
 
-##Kullanımı - Usage
+## Kullanımı - Usage
 
 İlk olarak 'Jquery' ve 'spin-360' scriptleri sayfaya dahil edilir.
 
@@ -90,6 +90,6 @@ window.sp = $.spin360({
 Projeyi çalıştırdıktan sonra durdurmak istiyorsanız:
 
 window.sp.destroy();
-##Authors
+## Authors
 
 Hepsiburada
