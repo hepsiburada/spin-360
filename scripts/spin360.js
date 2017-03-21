@@ -43,7 +43,7 @@
       this.appendImages(images);
       if (self.isDesktop()) {
         self.createEvents(images);
-      } else {
+        } else {
         self.createTouchEvents(images);
       }
     },

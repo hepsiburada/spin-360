@@ -1,0 +1,109 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.8
+3 info using node@v6.9.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\workspace\\spin-360',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\vtagal\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle spin-360@0.0.3~prepublish: spin-360@0.0.3
+11 silly lifecycle spin-360@0.0.3~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\vtagal\\AppData\\Roaming\\npm-cache\\spin-360\\0.0.3\\package.tgz',
+12 verbose tar pack   'C:\\workspace\\spin-360' ]
+13 verbose tarball C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package.tgz
+14 verbose folder C:\workspace\spin-360
+15 verbose addLocalTarball adding from inside cache C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package.tgz
+16 verbose correctMkdir C:\Users\vtagal\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd spin-360@0.0.3
+18 verbose afterAdd C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\vtagal\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package\package.json written
+21 silly publish { name: 'spin-360',
+21 silly publish   version: '0.0.3',
+21 silly publish   description: '360 degree detailed image presentation plugin',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/volkantagal/spin-360.git' },
+21 silly publish   keywords: [ '360', 'degree', 'product', 'image', 'view', 'volkan', 'tagal' ],
+21 silly publish   author: { name: 'Volkan Tağal' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/volkantagal/spin-360/issues' },
+21 silly publish   homepage: 'https://github.com/volkantagal/spin-360#readme',
+21 silly publish   gitHead: '6e79e9b2146b1d518fc9d5488ba2c77363b73eae',
+21 silly publish   readme: '# spin-360\r\n\r\n> `npm install spin-360`\r\n\r\nspin-360 360 derece detaylı resim gösterimi için geliştirilmiş ve geliştirilmektedir. \r\n\r\n360 derece ürün gösterimi ve özellikle e-ticaret siteleri için uygundur. \r\n\r\n## API\r\n\r\n$(element).spin360(options);\r\n\r\n## Parametreler - Options\r\n\r\n* `width`: (`Integer`) Görsel alanının genişliği - Default (`500`)\r\n* `height`: (`Integer`) - Görsel alanının yüksekliği - Default (`500`)\r\n* `datas`: (`Array`) - 360 derece gösterilmesi istenen nesnenin sıralı listesi.\r\n* `imgClass`: (`String`) - Görsellerin alacağı class değeri - Default (`spin-image`)\r\n* `type`: (`String`) - \'images\' ya da \'video\' - Default (`images`)\r\n* `lazyLoad`: (`boolean`) - Aktif olmayan görsellerin sayfaya yüklenmesini bekletir. Aktif olduktan sonra yükleyip, yüklenme zamanını dengeler - Default(`true`)\r\n\r\n## Kullanımı - Usage\r\n\r\nİlk olarak \'Jquery\' ve \'spin-360\' scriptleri sayfaya dahil edilir.\r\n\r\n```javascript\r\n<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>\r\n<script type="text/javascript" src="scripts/spin360.js"></script>\r\n/* Daha sonra 360 derece görselimizin görüneceği alan oluşturulur. */\r\n```\r\n\r\n```html\r\n<div id="360Image"></div>\r\n```\r\n\r\nSon olarak spin-360 pluginimiz tetiklendikten sonra projemiz kullanılmaya hazırdır.\r\n\r\n```javascript\r\nvar spin = $(\'#360Image\').spin360({\r\n    width: 500,\r\n    height: 500,\r\n    imgClass: \'spin-image\',\r\n    datas: [\r\n        "images/Tv/product01.jpg",\r\n        "images/Tv/product02.jpg",\r\n        "images/Tv/product03.jpg",\r\n        "images/Tv/product04.jpg",\r\n        "images/Tv/product05.jpg",\r\n        "images/Tv/product06.jpg",\r\n        "images/Tv/product07.jpg",\r\n        "images/Tv/product08.jpg",\r\n        "images/Tv/product09.jpg",\r\n        "images/Tv/product10.jpg",\r\n        "images/Tv/product11.jpg",\r\n        "images/Tv/product12.jpg",\r\n        "images/Tv/product13.jpg",\r\n        "images/Tv/product14.jpg",\r\n        "images/Tv/product15.jpg",\r\n        "images/Tv/product16.jpg",\r\n        "images/Tv/product17.jpg",\r\n        "images/Tv/product18.jpg",\r\n        "images/Tv/product19.jpg",\r\n        "images/Tv/product20.jpg",\r\n        "images/Tv/product21.jpg",\r\n        "images/Tv/product22.jpg",\r\n        "images/Tv/product23.jpg",\r\n        "images/Tv/product24.jpg",\r\n        "images/Tv/product25.jpg",\r\n        "images/Tv/product26.jpg",\r\n        "images/Tv/product27.jpg",\r\n        "images/Tv/product28.jpg",\r\n        "images/Tv/product29.jpg",\r\n        "images/Tv/product30.jpg",\r\n        "images/Tv/product31.jpg",\r\n        "images/Tv/product32.jpg",\r\n        "images/Tv/product33.jpg",\r\n        "images/Tv/product34.jpg",\r\n        "images/Tv/product35.jpg",\r\n        "images/Tv/product36.jpg"\r\n    ],\r\n    lazyLoad: true\r\n});\r\n```\r\n\r\nProjeyi çalıştırdıktan sonra durdurmak istiyorsanız:\r\n\r\nspin.destroy();\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   _id: 'spin-360@0.0.3',
+21 silly publish   _shasum: '91a5a9b8780002089503b96a01baaf1e37313ef6',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name spin-360
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'spin-360',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'spin-360',
+26 silly mapToRegistry   name: 'spin-360',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/spin-360
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\vtagal\AppData\Roaming\npm-cache\spin-360\0.0.3\package.tgz
+30 verbose request uri https://registry.npmjs.org/spin-360
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 10:11:34
+33 verbose request using bearer token for auth
+34 verbose request id bc00a0afcac0fb7b
+35 http request PUT https://registry.npmjs.org/spin-360
+36 http 403 https://registry.npmjs.org/spin-360
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Tue, 21 Mar 2017 08:11:38 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-hhn1539-HHN',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1490083895.050984,VS0,VE3361',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating C:\Users\vtagal\AppData\Roaming\npm-cache\registry.npmjs.org\spin-360 on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.0.3." : spin-360
+40 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:290:14)
+40 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:210:14)
+40 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid spin-360
+43 verbose cwd C:\workspace\spin-360
+44 error Windows_NT 10.0.10586
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+46 error node v6.9.1
+47 error npm  v3.10.8
+48 error code E403
+49 error "You cannot publish over the previously published version 0.0.3." : spin-360
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
